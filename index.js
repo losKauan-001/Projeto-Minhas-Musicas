@@ -25,7 +25,7 @@ app.get("/", (request, response) => {
 
     sql.query(comandoSelect, (error, data) => {
         if (error){
-            console.log(`Erro: ${error}`)
+            console.log("erro desconhecido")
             return;
         } else {
             response.json(data)
