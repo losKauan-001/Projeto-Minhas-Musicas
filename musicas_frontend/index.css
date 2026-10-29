@@ -1,0 +1,217 @@
+:root {
+    color-scheme: light;
+    --fundo: #f1f1f6;
+    --superficie: #ffffff;
+    --texto: #24252c;
+    --secundario: #686a75;
+    --borda: #d6d8e3;
+    --destaque: #5856d6;
+    --destaque-hover: #4543bb;
+    --vermelho: #c12e2c;
+    --vermelho-fundo: #fff5f4;
+    --sombra: 0 10px 28px rgba(36, 38, 65, 0.045);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 48px 20px;
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.pagina {
+    width: 100%;
+    max-width: 640px;
+    min-height: 660px;
+    margin: 0 auto;
+    padding: 32px;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--destaque);
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(1.55rem, 4vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+}
+
+.cabecalho a {
+    color: var(--destaque);
+    font-size: 0.96rem;
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+main {
+    padding-top: 24px;
+}
+
+#listaMusicas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.musica {
+    padding: 20px;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.musica h2 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+}
+
+.artista {
+    margin-top: 2px;
+    font-size: 1rem;
+}
+
+.detalhes {
+    margin-top: 2px;
+    color: var(--secundario);
+    font-size: 0.9rem;
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.acoes .editar,
+.acoes .apagar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 37px;
+    padding: 6px 15px;
+    border-radius: 6px;
+    border: 1.5px solid;
+    background: transparent;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 650;
+    line-height: 1.25;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.acoes .editar {
+    border-color: var(--destaque);
+    color: var(--destaque);
+}
+
+.acoes .apagar {
+    border-color: var(--vermelho);
+    color: var(--vermelho);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .cabecalho a:hover {
+        color: var(--destaque-hover);
+    }
+
+    .musica:hover {
+        border-color: var(--destaque);
+        box-shadow: 0 3px 14px rgba(70, 65, 130, 0.075);
+    }
+
+    .acoes .editar:hover {
+        background: var(--destaque);
+        color: var(--superficie);
+    }
+
+    .acoes .apagar:hover {
+        background: var(--vermelho-fundo);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --fundo: #191b22;
+        --superficie: #232630;
+        --texto: #f1f1f5;
+        --secundario: #b3b5c2;
+        --borda: #434654;
+        --destaque: #a5a3ff;
+        --destaque-hover: #c4c2ff;
+        --vermelho: #ff9595;
+        --vermelho-fundo: #3b292f;
+        --sombra: 0 10px 28px rgba(0, 0, 0, 0.12);
+    }
+}
+
+@media (prefers-color-scheme: dark) and (hover: hover) {
+    .acoes .editar:hover {
+        color: #191b22;
+    }
+
+    .musica:hover {
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.16);
+    }
+}
+
+@media (max-width: 540px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    .pagina {
+        min-height: calc(100vh - 36px);
+        padding: 24px 20px;
+    }
+
+    .cabecalho {
+        align-items: flex-start;
+    }
+
+    .musica {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .musica,
+    .acoes .editar,
+    .acoes .apagar {
+        transition: none;
+    }
+}

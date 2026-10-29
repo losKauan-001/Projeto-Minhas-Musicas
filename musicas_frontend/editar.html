@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Editar música | Minhas Músicas</title>
+    <link rel="stylesheet" href="editar.css">
+</head>
+<body>
+    <main class="pagina">
+        <header class="cabecalho">
+            <a class="voltar" href="index.html">Voltar para a lista</a>
+            <h1>Editar música</h1>
+        </header>
+
+        <div class="campo">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" value="Evidências">
+        </div>
+
+        <div class="campo">
+            <label for="artista">Artista</label>
+            <input type="text" id="artista" name="artista" value="Chitãozinho e Xororó">
+        </div>
+
+        <div class="campo">
+            <label for="genero">Gênero</label>
+            <input type="text" id="genero" name="genero" value="Sertanejo">
+        </div>
+
+        <div class="campo">
+            <label for="ano">Ano</label>
+            <input type="number" id="ano" name="ano" value="1990">
+        </div>
+
+        <div class="campo">
+            <label for="duracao">Duração em minutos</label>
+            <input type="number" id="duracao" name="duracao" value="5">
+        </div>
+
+        <button id="botaoSalvar" type="button">Salvar alterações</button>
+    </main>
+
+    <script src="editar.js"></script>
+</body>
+</html>
